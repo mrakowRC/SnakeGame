@@ -27,6 +27,14 @@ namespace SnakeGame
             {GridValue.Food, Images.Food },
         };
 
+        private readonly Dictionary<Direction, int> dirToRotation = new()
+        {
+            {Direction.Up, 0 },
+            {Direction.Down, 180},
+            {Direction.Left, 270 },
+            {Direction.Right, 90 }
+        };
+
         private readonly int rows = 15, cols = 15;
         private readonly Image[,] gridImages;
         private GameState gameState;
@@ -109,7 +117,8 @@ namespace SnakeGame
                 {
                     Image image = new Image
                     {
-                        Source = Images.Empty
+                        Source = Images.Empty,
+                        RenderTransformOrigin = new Point(0.5,0.5)
                     };
                     images[r, c] = image;
                     GameGrid.Children.Add(image);
@@ -122,6 +131,7 @@ namespace SnakeGame
         private void Draw()
         {
             DrawGrid();
+            DrawSnakeHead();
             ScoreText.Text = $"SCORE {gameState.Score}";
         }
 
@@ -133,13 +143,24 @@ namespace SnakeGame
                 {
                     GridValue gridVal = gameState.Grid[r, c];
                     gridImages[r, c].Source = gridValToImage[gridVal];
+                    gridImages[r, c].RenderTransform = Transform.Identity;
                 }
             }
         }
 
+        private void DrawSnakeHead()
+        {
+            Position headpos = gameState.HeadPosition();
+            Image image = gridImages[headpos.Row, headpos.Column];
+            image.Source = Images.Head;
+
+            int rotation = dirToRotation[gameState.Dir];
+            image.RenderTransform = new RotateTransform(rotation);
+        }
+
         private async Task ShowCountDown()
         {
-            for (int i = 3; i >= 1; i++)
+            for (int i = 3; i >= 1; i--)
             {
                 OverlayText.Text = i.ToString();
                 await Task.Delay(500);
