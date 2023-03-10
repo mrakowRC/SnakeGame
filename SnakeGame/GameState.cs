@@ -72,7 +72,7 @@ namespace SnakeGame
 
         public Position TailPosition() 
         {
-            return snakePositiob.Last.Value
+            return snakePositiob.Last.Value;
         }
 
         public IEnumerable<Position> SnakePosition()

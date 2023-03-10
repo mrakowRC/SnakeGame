@@ -8,25 +8,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assests\Body.png" />
-    <None Remove="Assests\DeadBody.png" />
-    <None Remove="Assests\DeadHead.png" />
-    <None Remove="Assests\DroidSansMono.ttf" />
-    <None Remove="Assests\Empty.png" />
-    <None Remove="Assests\Food.png" />
-    <None Remove="Assests\Head.png" />
-    <None Remove="Assests\icon.ico" />
+    <None Remove="Assets\Body.png" />
+    <None Remove="Assets\DeadBody.png" />
+    <None Remove="Assets\DeadHead.png" />
+    <None Remove="Assets\DroidSansMono.ttf" />
+    <None Remove="Assets\Empty.png" />
+    <None Remove="Assets\Food.png" />
+    <None Remove="Assets\Head.png" />
+    <None Remove="Assets\icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assests\Body.png" />
-    <Resource Include="Assests\DeadBody.png" />
-    <Resource Include="Assests\DeadHead.png" />
-    <Resource Include="Assests\DroidSansMono.ttf" />
-    <Resource Include="Assests\Empty.png" />
-    <Resource Include="Assests\Food.png" />
-    <Resource Include="Assests\Head.png" />
-    <Resource Include="Assests\icon.ico" />
+    <Resource Include="Assets\Body.png" />
+    <Resource Include="Assets\DeadBody.png" />
+    <Resource Include="Assets\DeadHead.png" />
+    <Resource Include="Assets\DroidSansMono.ttf" />
+    <Resource Include="Assets\Empty.png" />
+    <Resource Include="Assets\Food.png" />
+    <Resource Include="Assets\Head.png" />
+    <Resource Include="Assets\icon.ico" />
   </ItemGroup>
 
 </Project>
